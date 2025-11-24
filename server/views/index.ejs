@@ -1,5 +1,62 @@
 <%- include ./partials/header.ejs %>
 <%- include ./partials/main_nav.ejs %>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %> page</p>
+
+<main class="container mt-5">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1 class="display-4 mb-4">
+                <i class="fa-solid fa-dumbbell"></i> Welcome to FitLog
+            </h1>
+            <p class="lead mb-4">
+                Your Personal Workout Tracking Companion
+            </p>
+            <p class="mb-4">
+                Track your exercises, monitor your progress, and achieve your fitness goals with FitLog - 
+                a simple and effective workout tracker designed to help you stay motivated and organized.
+            </p>
+            <a href="/workouts" class="btn btn-primary btn-lg">
+                <i class="fa-solid fa-dumbbell"></i> View My Workouts
+            </a>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-4 text-center mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <i class="fa-solid fa-plus-circle fa-3x text-primary mb-3"></i>
+                    <h5 class="card-title">Track Workouts</h5>
+                    <p class="card-text">
+                        Easily log your exercises, sets, reps, and weights for each workout session.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 text-center mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <i class="fa-solid fa-chart-line fa-3x text-success mb-3"></i>
+                    <h5 class="card-title">Monitor Progress</h5>
+                    <p class="card-text">
+                        Keep a detailed history of all your workouts and see how you improve over time.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 text-center mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <i class="fa-solid fa-trophy fa-3x text-warning mb-3"></i>
+                    <h5 class="card-title">Stay Motivated</h5>
+                    <p class="card-text">
+                        Visualize your achievements and stay consistent with your fitness routine.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
 <%- include ./partials/footer.ejs %>

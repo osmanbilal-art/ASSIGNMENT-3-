@@ -1,54 +1,83 @@
 <%- include ../partials/header.ejs %>
 <%- include ../partials/main_nav.ejs %>
-<div class="container">
+
+<div class="container mt-4">
     <div class="row">
         <div class="offset-md-3 col-md-6">
-            <h1><%= title %></h1>
+            <h1 class="mb-4">
+                <i class="fa-solid fa-plus-circle"></i> <%= title %>
+            </h1>
             <form class="form" method="post">
-                <div class="form-group">
-                    <label for="nameTextField">Book Title</label>
+                <div class="form-group mb-3">
+                    <label for="exerciseNameField" class="form-label">Exercise Name</label>
                     <input type="text" class="form-control"
-                    id="nameTextField"
-                    placeholder="Enter the book title"
-                    name="name" required>
+                        id="exerciseNameField"
+                        placeholder="e.g., Bench Press, Squats, Deadlift"
+                        name="exerciseName" required>
                 </div>
-                <div class="form-group">
-                    <label for="authorTextField">Book Author</label>
-                    <input type="text" class="form-control"
-                    id="authorTextField"
-                    placeholder="Enter the book author"
-                    name="author" required>
+
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label for="setsField" class="form-label">Sets</label>
+                        <input type="number" class="form-control"
+                            id="setsField"
+                            placeholder="3"
+                            name="sets"
+                            min="1"
+                            required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="repsField" class="form-label">Reps</label>
+                        <input type="number" class="form-control"
+                            id="repsField"
+                            placeholder="10"
+                            name="reps"
+                            min="1"
+                            required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="weightField" class="form-label">Weight (lbs)</label>
+                        <input type="number" class="form-control"
+                            id="weightField"
+                            placeholder="135"
+                            name="weight"
+                            min="0"
+                            step="0.5"
+                            required>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="publishedTextField">Year</label>
-                    <input type="text" class="form-control"
-                    id="publishedTextField"
-                    placeholder="Enter the year of book publication"
-                    name="published" required>
+
+                <div class="form-group mb-3">
+                    <label for="dateField" class="form-label">Date</label>
+                    <input type="date" class="form-control"
+                        id="dateField"
+                        name="date"
+                        value="<%= new Date().toISOString().split('T')[0] %>"
+                        required>
                 </div>
-                <div class="form-group">
-                    <label for="descriptionTextArea">Book Description</label>
-                    <textarea type="text" class="form-control"
-                    id="descriptionTextArea"
-                    placeholder="Enter the description of the book"
-                    name="description" required></textarea>
+
+                <div class="form-group mb-3">
+                    <label for="notesTextArea" class="form-label">Notes (Optional)</label>
+                    <textarea class="form-control"
+                        id="notesTextArea"
+                        placeholder="Any additional notes about your workout..."
+                        name="notes"
+                        rows="3"></textarea>
                 </div>
-                <div class="form-group">
-                    <label for="priceTextField">Book Price</label>
-                    <input type="text" class="form-control"
-                    id="priceTextField"
-                    placeholder="Enter the price of the book"
-                    name="price" required>
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fas fa-save"></i> Save Workout
+                    </button>
+                    <a href="/workouts" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel
+                    </a>
                 </div>
-                <br>
-                <button class="btn btn-primary" type="submit">
-                    <i class="fas fa-edit"></i> Submit
-                </button>
-                <a href="/books" class="btn btn-warning">
-                    <i class="fas fa-undo"></i> Cancel
-                </a>
             </form>
         </div>
     </div>
 </div>
+
 <%- include ../partials/footer.ejs %>
