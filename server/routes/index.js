@@ -15,11 +15,6 @@ router.get('/home', function (req, res, next) {
     });
 });
 
-/* GET About page. */
-router.get('/about', function (req, res, next) {
-    res.render('about', {
-        title: 'About FitLog'
-    });
-});
+
 
 module.exports = router;
